@@ -3,20 +3,28 @@
 
 
 {% block main %}
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
-    <p>ceci est la page de connexion</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <br>
+            <form action="{% url 'connexion' %}" method="POST">
+                {% csrf_token %}
+                <table>
+                    {{connexion.as_table}}
+                </table>
+                <br>
+                <input type="submit" value="submit">
+            </form>
+            <br>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
 {% endblock main %}

@@ -35,8 +35,9 @@ class Utilisateur(models.Model):
     date_de_naissance = models.DateField()
     email = models.EmailField( max_length=254)
     localisation = models.TextField()
-    image = models.ImageField( upload_to='static/img')
+    image = models.ImageField( upload_to='static/img', null = True)
     telephone = models.CharField( max_length=50,null = True)
+    password = models.CharField( max_length=30 ,null = True)
 
     def __str__(self):
         return '{} {}'.format(self.nom,self.prenom)

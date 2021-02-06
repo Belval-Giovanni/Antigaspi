@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from . import forms
 from . import models
 
@@ -27,7 +28,7 @@ def inscription(request):
         inscription = forms.Inscription(request.POST)
         models.Utilisateur(nom = inscription.data['nom'],email = inscription.data['email'],localisation = inscription.data['adresse'],\
         prenom = inscription.data['prenom'],date_de_naissance = inscription.data['date_de_naissance'],\
-        telephone = inscription.data['telephone'],).save()
+        telephone = inscription.data['telephone'],password = inscription.data['password']).save()
         return render(request,'pages/connexion-complete.html',{})
         
     else:
@@ -38,9 +39,18 @@ def inscription(request):
     
 
 def connexion(request):
-    context = {
-
-    }
+    if request.method == 'POST':
+        connexion = forms.Connexion(request.POST)
+        try:
+            utilisateur \
+            = models.Utilisateur.objects.filter(email = connexion.data['email']).get(password = connexion.data['password'])
+            return HttpResponse('Bienvenu sur votre compte')
+        except :
+            return HttpResponse('vous n\'avez pas de compte')
+    else:
+        context = {
+            'connexion':forms.Connexion(),
+        }
     return render(request,'pages/connexion.html',context)
 
 def map(request):
