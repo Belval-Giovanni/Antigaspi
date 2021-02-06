@@ -59,7 +59,7 @@
           {% endcomment %}
               
           <li><a href="{% url 'food' %}">parcourir</a></li>
-          <li><a href="#sign in">connexion</a></li>
+          <li><a href="{% url 'connexion' %}">connexion</a></li>
 
           
           {% comment %}
@@ -127,7 +127,8 @@
                 <ul>
                   <li><i class="bx bx-chevron-right"></i> <a href="{% url 'index' %}">Home</a></li>
                   <li><i class="bx bx-chevron-right"></i> <a href="{% url 'food' %}">parcourir</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#connexion">connexion/inscription</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="{% url 'connexion' %}">connexion</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="{% url 'inscription' %}">inscription</a></li>
                   
                       
                 </ul>
