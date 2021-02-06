@@ -3,21 +3,18 @@
 
 
 {% block main %}
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
-    <p>ceci est la page d'inscription</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form action="{% url 'inscription' %}" method="POST">
+        {% csrf_token %}
+        <table>
+            {{inscription.as_table}}
+        </table>
+        <input type="submit" value="submit">
+    </form>
+    <br>
+    
 {% endblock main %}
     

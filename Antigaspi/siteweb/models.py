@@ -8,6 +8,10 @@ class Question(models.Model):
     question = models.TextField(blank = False)
     reponse = models.TextField(blank = False)
 
+    def __str__(self):
+        return self.question
+    
+
 class Contact(models.Model):
     statut = models.BooleanField(default = True)
     date_add = models.DateTimeField(auto_now_add=True)
@@ -16,6 +20,10 @@ class Contact(models.Model):
     localisation = models.TextField(blank = False)
     email = models.EmailField( max_length=254)
     telephone = models.TextField(blank = False)
+
+    def __str__(self):
+        return self.email
+    
 
 class Utilisateur(models.Model):
     statut = models.BooleanField(default = True)
@@ -28,6 +36,11 @@ class Utilisateur(models.Model):
     email = models.EmailField( max_length=254)
     localisation = models.TextField()
     image = models.ImageField( upload_to='static/img')
+    telephone = models.CharField( max_length=50,null = True)
+
+    def __str__(self):
+        return '{} {}'.format(self.nom,self.prenom)
+    
 
 
 class Annonce(models.Model):
@@ -36,6 +49,11 @@ class Annonce(models.Model):
     date_upd = models.DateTimeField( auto_now=True)
 
     distributeur = models.ForeignKey(Utilisateur, on_delete=models.CASCADE)
+    plat = models.CharField( max_length=150 , null = True)
+
+    def __str__(self):
+        return self.plat
+    
     
 
 

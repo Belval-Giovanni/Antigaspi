@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from . import forms
+from . import models
 
 def index(request):
     context = {
@@ -21,11 +23,19 @@ def food_details(request):
     return render(request,'pages/food-details.html',context)
 
 def inscription(request):
-    context = {
-
-    }
+    if request.method == 'POST' :
+        inscription = forms.Inscription(request.POST)
+        models.Utilisateur(nom = inscription.data['nom'],email = inscription.data['email'],localisation = inscription.data['adresse'],\
+        prenom = inscription.data['prenom'],date_de_naissance = inscription.data['date_de_naissance'],\
+        telephone = inscription.data['telephone'],).save()
+        return render(request,'pages/connexion-complete.html',{})
+        
+    else:
+        context = {
+            'inscription':forms.Inscription()
+      }
     return render(request,'pages/inscription.html',context)
-
+    
 
 def connexion(request):
     context = {
