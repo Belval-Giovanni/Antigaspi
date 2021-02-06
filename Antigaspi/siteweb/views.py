@@ -42,3 +42,6 @@ def connexion(request):
 
     }
     return render(request,'pages/connexion.html',context)
+
+def map(request):
+    return render(request,'pages/map.html',{})
