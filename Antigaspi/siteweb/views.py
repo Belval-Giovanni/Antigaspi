@@ -55,3 +55,6 @@ def connexion(request):
 
 def map(request):
     return render(request,'pages/map.html',{})
+
+def annonce(request):
+    return render(request,'pages/annonce.html',{})

@@ -9,4 +9,5 @@ urlpatterns = [
     path('inscription/',views.inscription,name = 'inscription'),
     path('connexion',views.connexion,name = 'connexion'),
     path('map/',views.map,name = 'map'),
+    path('annonce',views.annonce,name = 'annonce'),
 ]
