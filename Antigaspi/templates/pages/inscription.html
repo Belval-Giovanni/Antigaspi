@@ -1,20 +1,22 @@
-{% extends 'bases/base.html' %}
-{% load static %}
+{% extends 'bases/base.html' %} {% load static %} {% block main %}
+<br />
+<br />
+<br />
+<br />
+  <section id="contact" class="contact">
+  <form action="{% url 'inscription' %}" method="POST">
+    {% csrf_token %}
+    <div class="form-group mt-3">
+    <table>
+      {{inscription.as_table}}
+    </table>
+    <input type="submit" value="submit" />
+    <div>
+  </form>
+  </section>
+  
+    <br />
 
-
-{% block main %}
-    <br>
-    <br>
-    <br>
-    <br>
-    <form action="{% url 'inscription' %}" method="POST">
-        {% csrf_token %}
-        <table>
-            {{inscription.as_table}}
-        </table>
-        <input type="submit" value="submit">
-    </form>
-    <br>
-    
-{% endblock main %}
-    
+    {% endblock main %}
+  </div>
+</div>
