@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
 from . import forms
 from . import models
@@ -17,9 +17,10 @@ def food(request):
     return render(request,'pages/food.html',context)
 
 
-def food_details(request):
+def food_details(request,id):
+    annonce = get_object_or_404(models.Annonce,id = id)
     context = {
-
+        "annonce":annonce,
     }
     return render(request,'pages/food-details.html',context)
 
