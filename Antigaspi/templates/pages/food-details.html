@@ -7,15 +7,16 @@
         <br>
         <br>
         <br>
+        <br>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="col-sm-6">
-                        <p>distributeur : {{annonce.utilisateur.nom}} {{annonce.utilisateur.nom}}</p>
+                        <p>distributeur : {{annonce.distributeur}}</p>
                     </div>
                 </div>
                 <div class="col-sm">
-                    <p>je suis gio</p>
+                    <img src="{{annonce.image.url}}" class="img-fluid" alt="" />
                 </div>
             </div>
             <div class="row">
@@ -26,5 +27,9 @@
         </div>
 
     </div>
+    <br>
+    <br>
+    <br>
+
 {% endblock main %}
     
