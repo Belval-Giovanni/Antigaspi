@@ -21,7 +21,7 @@
     <div class="section-title" data-aos="fade-up">
       <h2>Annonces</h2>
       <div class="text-center">
-        <form action="{% url 'annonce' %}" method="POST">
+        <form action="{% url 'annonce' %}" method="">
           {% csrf_token %}
           <input type="submit" value="Ajoutez une annonce">
         </form>

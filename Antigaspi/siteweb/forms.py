@@ -17,7 +17,13 @@ class Connexion(forms.Form):
     email = forms.EmailField(label = 'email', required=True)
     password = forms.CharField( max_length=30, required=True)
 
-    
+
+class Publication(forms.Form):
+    email = forms.EmailField(label = 'email', required=True)
+    password = forms.CharField( max_length=30, required=True)
+
+    plat = forms.CharField( max_length=50, required=False)
+    image = forms.ImageField( required=False)
 
 
 

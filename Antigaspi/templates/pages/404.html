@@ -1,0 +1,22 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+
+
+{% block main %}
+    <br><br><br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                mot de passe où email incorrect.
+            </div>
+            <div class="row">
+                <a href="{% url 'annonce' %}">refaite la publcation ?</a>
+            </div>
+            <div class="row">
+                <a href="{% url 'inscription' %}">creez un compte</a>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+{% endblock main %}
+    

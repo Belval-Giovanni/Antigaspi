@@ -4,5 +4,15 @@
 
 {% block main %}
     <br><br><br><br><br><br>
+    <form action="{% url 'annonce' %}" method="POST">
+        {% csrf_token %}
+        <table>
+            {{publication.as_table}}
+        </table>
+        <br>
+        <input type="submit" value="soumettre">
+        <br>
+    </form>
 {% endblock main %}
+<br>
     

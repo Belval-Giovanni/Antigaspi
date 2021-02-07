@@ -55,6 +55,17 @@ class Annonce(models.Model):
 
     def __str__(self):
         return self.plat
+
+
+class Commentaire(models.Model):
+    statut = models.BooleanField(default = True)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_upd = models.DateTimeField( auto_now=True)
+
+    utilisateur = models.ForeignKey(Utilisateur, on_delete=models.CASCADE)
+    commentaire = models.TextField(blank = False)
+
+
     
     
 

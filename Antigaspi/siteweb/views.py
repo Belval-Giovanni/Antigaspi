@@ -5,7 +5,7 @@ from . import models
 
 def index(request):
     context = {
-
+        'commentaires':models.Commentaire.objects.all()
     }
     return render(request,'pages/index.html',context)
 
@@ -57,4 +57,21 @@ def map(request):
     return render(request,'pages/map.html',{})
 
 def annonce(request):
-    return render(request,'pages/annonce.html',{})
+
+    if request.method == 'POST':
+
+        try:
+            publication = forms.Publication(request.POST)
+            utilisateur \
+            = models.Utilisateur.objects.filter(email = publication.data['email']).get(password = publication.data['password'])
+            models.Annonce(distributeur = utilisateur,plat = publication.data['plat'],\
+            image = 'static/img/'+ publication.data['image']).save()
+            return render(request,'pages/index.html')
+
+        except :
+            return render(request,'pages/404.html')
+    else:
+        context = {
+            'publication':forms.Publication(),
+        }
+    return render(request,'pages/annonce.html',context)
