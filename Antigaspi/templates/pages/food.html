@@ -20,33 +20,36 @@
   <div class="container">
     <div class="section-title" data-aos="fade-up">
       <h2>Annonces</h2>
+      <div class="text-center">
+        <button type="submit">Ajouter une annonce</button>
+      </div>
     </div>
 
-
     <div class="row portfolio-container" data-aos="fade-up">
-
-
-      {% for annonce in  annonces %}
+      {% for annonce in annonces %}
 
       <div class="col-lg-4 col-md-6 portfolio-item filter-app">
         <div class="portfolio-wrap">
-          <img src="{{annonce.image.url}}" class="img-fluid" alt="">
+          <img src="{{annonce.image.url}}" class="img-fluid" alt="" />
           <div class="portfolio-info">
             <h4>{{annonce.plat}}</h4>
             <p>{{annonce.distributeur.nom}} {{annonce.distributeur.prenom}}</p>
             <div class="portfolio-links">
-              <a href="{{annonce.image.url}}" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="{% url 'food-details' %} "title="More Details"><i class="bx bx-link"></i></a>
+              <a
+                href="{{annonce.image.url}}"
+                data-gall="portfolioGallery"
+                class="venobox"
+                title="App 1"
+                ><i class="bx bx-plus"></i
+              ></a>
+              <a href="{% url 'food-details' %} " title="More Details"
+                ><i class="bx bx-link"></i
+              ></a>
             </div>
           </div>
         </div>
       </div>
       {% endfor %}
-
-
-
-
-
     </div>
   </div>
 </section>
