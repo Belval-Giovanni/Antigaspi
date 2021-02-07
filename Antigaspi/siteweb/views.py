@@ -12,7 +12,7 @@ def index(request):
 
 def food(request):
     context = {
-
+        'annonces':models.Annonce.objects.all(),
     }
     return render(request,'pages/food.html',context)
 
